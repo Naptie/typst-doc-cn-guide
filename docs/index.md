@@ -49,11 +49,11 @@ hero:
 
 ## 推荐资料
 
-小蓝书 Web 版（入门必读！）：https://typst-doc-cn.github.io/tutorial/
+小蓝书 Web 版（入门必读！）：https://tutorial.typst.dev/
 
 中文 Awesome Typst 列表：https://github.com/qjcg/awesome-typst/
 
-Typst 非官方中文文档网站：https://typst-doc-cn.github.io/docs/
+Typst 非官方中文文档网站：https://typst.dev/
 
 ## 问卷调查
 
