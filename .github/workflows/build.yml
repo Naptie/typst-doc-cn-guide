@@ -8,9 +8,12 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    name: Vitepress build
+    permissions:
+      contents: read
+      deployments: write
+    name: Build and deploy
     steps:
     - uses: actions/checkout@v4
       with:
@@ -30,29 +33,11 @@ jobs:
       run: |
         pnpm install
         pnpm build
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+    - name: Deploy to Cloudflare Pages
+      uses: cloudflare/pages-action@1
       with:
-        path: docs/.vitepress/dist
-
-  # Deploy job
-  deploy:
-    # Add a dependency to the build job
-    needs: build
-
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      contents: read
-      deployments: write
-
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: typst-doc-cn-guide
-          directory: 'docs/.vitepress/dist'
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: typst-doc-cn-guide
+        directory: 'docs/.vitepress/dist'
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
