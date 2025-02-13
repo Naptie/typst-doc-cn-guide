@@ -1,1 +1,1 @@
-See https://typst-doc-cn.github.io/guide/
+See https://guide.typst.dev/
