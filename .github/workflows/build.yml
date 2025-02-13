@@ -40,5 +40,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           projectName: typst-doc-cn-guide
-          directory: "docs/.vitepress/dist"
+          directory: "./docs/.vitepress/dist"
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
