@@ -5,7 +5,7 @@ on:
       - master
 
 concurrency:
-  group: "pages"
+  group: "cf-pages"
   cancel-in-progress: false
 
 jobs:
@@ -41,31 +41,3 @@ jobs:
           projectName: typst-doc-cn-guide
           directory: "./docs/.vitepress/dist"
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-  deploy-vercel:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          # All history is required for https://vitepress.dev/reference/default-theme-last-updated
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-      - name: Prepare fonts and images
-        shell: bash
-        run: |
-          sudo snap install typst
-          curl -OL https://github.com/typst-doc-cn/guide/releases/download/files/fonts.7z
-          7z x fonts.7z -ofonts
-      - name: Setup and build
-        shell: bash
-        run: |
-          pnpm install
-          pnpm build:vercel
-      - name: Deploy to Vercel
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: npx vercel --prod --token $VERCEL_TOKEN
