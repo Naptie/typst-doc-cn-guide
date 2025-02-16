@@ -1,11 +1,11 @@
 # 常见问题
 
-本文档收录了日经问题（QQ 群中经常有人问的问题），以及[官方文档](https://typst.app/docs/reference/)和[小蓝书](https://tutorial.typst.dev/)中未提到的一些零碎的使用技巧。
+本文档收录了日经问题（QQ 群中经常有人问的问题），以及[官方文档](https://typst.app/docs/reference/)和[小蓝书](https://typst.dev/tutorial/)中未提到的一些零碎的使用技巧。
 
 由于问题已有数十个，单页面实在是太长，因此将每个问题拆开了。请活用页面上方的搜索框查找问题。
 
 ::: tip
-阅读本文档之前，推荐首先阅读[官方文档](https://typst.app/docs/reference/)和[小蓝书](https://tutorial.typst.dev/)。
+阅读本文档之前，推荐首先阅读[官方文档](https://typst.app/docs/reference/)和[小蓝书](https://typst.dev/tutorial/)。
 :::
 
 如果页面上的内容有错误或者对内容有疑问，可以直接[提交 issue](https://github.com/typst-doc-cn/guide/issues/new/choose)
