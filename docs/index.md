@@ -53,7 +53,7 @@ hero:
 
 中文 Awesome Typst 列表：https://github.com/qjcg/awesome-typst/
 
-Typst 非官方中文文档网站：https://typst.dev/
+Typst 非官方中文文档网站：https://docs.typst.dev/
 
 ## 问卷调查
 
