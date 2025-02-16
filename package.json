@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "build": "cross-env BASE=/ vitepress build docs",
     "build:vercel": "cross-env BASE=/guide/ vitepress build docs",
     "serve": "vitepress serve docs"
   },
