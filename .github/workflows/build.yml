@@ -62,11 +62,9 @@ jobs:
           7z x fonts.7z -ofonts
       - name: Setup and build
         shell: bash
-        env:
-          VITEPRESS_BASE: /guide
         run: |
           pnpm install
-          pnpm build
+          pnpm build:vercel
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
