@@ -12,7 +12,7 @@ hero:
     - theme: brand
       text: 快速开始
       link: /quick-start
-    - theme: alt
+    - theme: brand
       text: 常见问题
       link: /FAQ
     - theme: alt
@@ -55,12 +55,13 @@ hero:
 
 Typst 非官方中文文档网站：https://docs.typst.dev/
 
+Typst Examples Book（英文，有非常多的例子）：https://sitandr.github.io/typst-examples-book/book/
+
 ## 问卷调查
 
-为了解各位的使用情况，这里有两份问卷调查，感兴趣的用户可以填写一下：
+为了解各位的使用情况，这里有一份问卷调查，感兴趣的用户可以填写一下：
 
-- [Typst 非官方中文社群年度问卷（2024）](https://www.wjx.cn/vm/Q43WAhW.aspx)
-- [关于 是否需要在Word中插入typst公式的功能 的调研](https://wj.qq.com/s2/16829677/507f/)
+- [关于 是否需要在 Word 中插入 typst 公式的功能的调研](https://wj.qq.com/s2/16829677/507f/)
 
 ## 用户社区
 
