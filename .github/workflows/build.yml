@@ -30,10 +30,10 @@ jobs:
         pnpm install
         pnpm build
     - name: Deploy to Cloudflare Pages
-      uses: cloudflare/wrangler-action@v3
+      uses: cloudflare/pages-action@v1
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-        workingDirectory: "./docs/.vitepress/dist"
+        projectName: "typst-doc-cn-guide"
+        directory: "./docs/.vitepress/dist"
         gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-        packageManager: "pnpm"
