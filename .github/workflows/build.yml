@@ -36,3 +36,4 @@ jobs:
         accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
         workingDirectory: "./docs/.vitepress/dist"
         gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        packageManager: "pnpm"
