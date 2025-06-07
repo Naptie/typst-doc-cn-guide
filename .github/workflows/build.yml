@@ -9,9 +9,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    name: Vitepress build
+    name: Build and Deploy
     steps:
     - uses: actions/checkout@v4
       with:
@@ -29,23 +29,10 @@ jobs:
       run: |
         pnpm install
         pnpm build
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+    - name: Deploy to Cloudflare Pages
+      uses: cloudflare/wrangler-action@v3
       with:
-        path: docs/.vitepress/dist
-
-  # Deploy job
-  deploy:
-    # Add a dependency to the build job
-    needs: build
-
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-          workingDirectory: "./docs/.vitepress/dist"
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        workingDirectory: "./docs/.vitepress/dist"
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
